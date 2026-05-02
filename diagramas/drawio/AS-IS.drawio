@@ -1,0 +1,155 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="jmwk6hSdhSbjJusLFgkd">
+    <mxGraphModel dx="968" dy="564" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pool" parent="1" style="shape=pool;startSize=30;horizontal=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="" vertex="1">
+          <mxGeometry height="940" width="980" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lane1" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#FAEEDA;strokeColor=#d6b656;fontStyle=1;fontSize=11;fontColor=#633806;" value="Tienda (POS)" vertex="1">
+          <mxGeometry height="130" width="980" as="geometry" />
+        </mxCell>
+        <mxCell id="start1" parent="lane1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#d6b656;fontStyle=1;fontSize=10;" value="Inicio - Venta en tienda" vertex="1">
+          <mxGeometry height="50" width="120" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="task1" parent="lane1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontSize=10;fontColor=#501313;" value="Registro venta en POS (No centralizado)" vertex="1">
+          <mxGeometry height="60" width="190" x="230" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" edge="1" parent="lane1" source="start1" style="edgeStyle=orthogonalEdgeStyle;" target="task1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane2" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#E6F1FB;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;fontColor=#0C447C;" value="Planeamiento de Demanda" vertex="1">
+          <mxGeometry height="150" width="980" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="task2" parent="lane2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontSize=10;fontColor=#501313;" value="Consolidacion manual (Excel - sin integracion)" vertex="1">
+          <mxGeometry height="60" width="190" x="230" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="task3" parent="lane2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontSize=10;fontColor=#501313;" value="Planificacion de reposicion (Datos desactualizados)" vertex="1">
+          <mxGeometry height="60" width="190" x="510" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" edge="1" parent="lane2" source="task2" style="edgeStyle=orthogonalEdgeStyle;" target="task3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane3" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#EAF3DE;strokeColor=#82b366;fontStyle=1;fontSize=11;fontColor=#27500A;" value="ERP (Compras)" vertex="1">
+          <mxGeometry height="130" width="980" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="task4" parent="lane3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#B4B2A9;fontSize=10;fontColor=#444441;" value="Generacion orden de compra (Manual - datos desfasados)" vertex="1">
+          <mxGeometry height="60" width="190" x="510" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="task5" parent="lane3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontSize=10;fontColor=#501313;" value="ERP procesa orden (Sin integracion WMS)" vertex="1">
+          <mxGeometry height="60" width="190" x="230" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f5" edge="1" parent="lane3" source="task4" style="edgeStyle=orthogonalEdgeStyle;" target="task5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane4" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#EEEDFE;strokeColor=#7b5ea7;fontStyle=1;fontSize=11;fontColor=#3C3489;" value="WMS (Almacen Central)" vertex="1">
+          <mxGeometry height="140" width="980" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="task6" parent="lane4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontSize=10;fontColor=#501313;" value="Picking en almacen (Sin priorizacion dinamica)" vertex="1">
+          <mxGeometry height="60" width="190" x="230" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="lane5" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#FAECE7;strokeColor=#993C1D;fontStyle=1;fontSize=11;fontColor=#712B13;" value="TMS / Transporte 3PL" vertex="1">
+          <mxGeometry height="130" width="980" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="task7" parent="lane5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontSize=10;fontColor=#501313;" value="Coordinacion TMS / 3PL (Sin SLA - sin trazabilidad)" vertex="1">
+          <mxGeometry height="60" width="190" x="230" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="task8" parent="lane5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontSize=10;fontColor=#501313;" value="Despacho a tienda (Sin monitoreo - variabilidad)" vertex="1">
+          <mxGeometry height="60" width="190" x="510" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f8" edge="1" parent="lane5" source="task7" style="edgeStyle=orthogonalEdgeStyle;" target="task8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane6" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#FAEEDA;strokeColor=#d6b656;fontStyle=1;fontSize=11;fontColor=#633806;" value="Tienda Destino" vertex="1">
+          <mxGeometry height="130" width="980" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="task9" parent="lane6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontSize=10;fontColor=#501313;" value="Recepcion en tienda (Retrasos posibles)" vertex="1">
+          <mxGeometry height="60" width="190" x="230" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="end1" parent="lane6" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontStyle=1;fontSize=10;fontColor=#501313;" value="Fin: Quiebre de stock&lt;div&gt;&amp;nbsp;(Detectado tarde)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="190" x="510" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f10" edge="1" parent="lane6" source="task9" style="edgeStyle=orthogonalEdgeStyle;" target="end1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane7" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#F1EFE8;strokeColor=#B4B2A9;fontStyle=1;fontSize=11;fontColor=#444441;" value="Alta Gerencia" vertex="1">
+          <mxGeometry height="130" width="980" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="task10" parent="lane7" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#B4B2A9;fontSize=10;fontColor=#444441;" value="Reporte post-evento (KPIs calculados tarde)" vertex="1">
+          <mxGeometry height="60" width="190" x="230" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="task11" parent="lane7" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontSize=10;fontColor=#501313;" value="Decision reactiva (Sin planificacion anticipada)" vertex="1">
+          <mxGeometry height="60" width="190" x="510" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="f12" edge="1" parent="lane7" source="task10" style="edgeStyle=orthogonalEdgeStyle;" target="task11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#E24B4A;fontColor=#A32D2D;fontSize=9;" value="desfase batch - horas/dias">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="365" y="129" as="sourcePoint" />
+            <mxPoint x="365" y="199" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f4" edge="1" parent="1" source="task3" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#E24B4A;fontColor=#A32D2D;fontSize=9;" target="task4" value="sin integracion con ERP - manual">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#E24B4A;fontColor=#A32D2D;fontSize=9;" value="sin senal de demanda al WMS">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="365" y="409" as="sourcePoint" />
+            <mxPoint x="365" y="479" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f7" edge="1" parent="1" source="task6" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#E24B4A;fontColor=#A32D2D;fontSize=9;" target="task7" value="sin coordinacion con TMS - manual">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f9" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#E24B4A;fontColor=#A32D2D;fontSize=9;" value="retraso oculto hasta llegada">
+          <mxGeometry relative="1" x="0.6842" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="365" y="658" as="sourcePoint" />
+            <mxPoint x="365" y="682" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f11" edge="1" parent="1" source="end1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#E24B4A;fontColor=#A32D2D;fontSize=9;" value="alerta tardia - post-evento">
+          <mxGeometry relative="1" x="1" y="14" as="geometry">
+            <mxPoint x="-4" y="10" as="offset" />
+            <mxPoint x="640" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="impacto" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;fontStyle=1;fontSize=11;fontColor=#501313;" value="Impacto en el negocio: Baja disponibilidad en tienda - perdida de ventas - merma de rentabilidad" vertex="1">
+          <mxGeometry height="60" width="480" x="280" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="fi1" edge="1" parent="1" source="task11" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#E24B4A;fontColor=#A32D2D;fontSize=9;" target="impacto" value="impacto operativo y financiero">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nota" parent="1" style="text;html=1;strokeColor=#E24B4A;fillColor=#FCEBEB;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#A32D2D;fontStyle=1;rotation=-90;" value="Sin capa de integracion en tiempo real - ausencia de Control Tower" vertex="1">
+          <mxGeometry height="40" width="910" x="585" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="ley_bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8F8F8;strokeColor=#D3D1C7;" value="" vertex="1">
+          <mxGeometry height="50" width="820" x="40" y="1210" as="geometry" />
+        </mxCell>
+        <mxCell id="ley1_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFB3B3;strokeColor=#b85450;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="60" y="1222" as="geometry" />
+        </mxCell>
+        <mxCell id="ley1_txt" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#501313;" value="Proceso con problema" vertex="1">
+          <mxGeometry height="18" width="150" x="84" y="1222" as="geometry" />
+        </mxCell>
+        <mxCell id="ley2_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8E8E8;strokeColor=#B4B2A9;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="260" y="1222" as="geometry" />
+        </mxCell>
+        <mxCell id="ley2_txt" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#444441;" value="Proceso neutro" vertex="1">
+          <mxGeometry height="18" width="120" x="284" y="1222" as="geometry" />
+        </mxCell>
+        <mxCell id="ley3_txt" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#A32D2D;" value="----&gt; Ruptura de integracion" vertex="1">
+          <mxGeometry height="18" width="190" x="430" y="1222" as="geometry" />
+        </mxCell>
+        <mxCell id="ley4_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#E24B4A;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="650" y="1222" as="geometry" />
+        </mxCell>
+        <mxCell id="ley4_txt" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontColor=#A32D2D;" value="Sin Control Tower" vertex="1">
+          <mxGeometry height="18" width="140" x="674" y="1222" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
